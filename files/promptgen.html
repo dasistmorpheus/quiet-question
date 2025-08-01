@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Генератор контента для карточек маркетплейсов</title>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background-color: #f5f5f7; margin: 0; padding: 20px; display: flex; justify-content: center; align-items: center; min-height: 100vh; }
+        .container { background-color: #fff; border-radius: 12px; box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08); padding: 30px; width: 100%; max-width: 700px; }
+        h1 { text-align: center; color: #1d1d1f; font-weight: 600; margin-bottom: 25px; }
+        .form-group { margin-bottom: 25px; }
+        .label-wrapper { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+        label { font-weight: 600; color: #555; }
+        .placeholder-btn { background-color: #e9e9ed; color: #555; border: none; border-radius: 6px; padding: 4px 10px; font-size: 12px; font-weight: 500; cursor: pointer; transition: background-color 0.2s; }
+        .placeholder-btn:hover { background-color: #dcdce1; }
+        textarea { width: calc(100% - 24px); padding: 12px; border: 1px solid #dcdcdc; border-radius: 8px; resize: vertical; font-family: inherit; font-size: 15px; transition: border-color 0.2s, box-shadow 0.2s; }
+        textarea:focus { border-color: #007aff; box-shadow: 0 0 0 2px rgba(0, 122, 255, 0.2); outline: none; }
+        .main-action-btn { background-color: #007AFF; color: white; border: none; padding: 14px 25px; border-radius: 8px; cursor: pointer; font-size: 16px; font-weight: 500; display: block; margin: 30px auto 0; transition: background-color 0.2s; }
+        .main-action-btn:hover { background-color: #005ec4; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Генератор контента для карточек маркетплейсов</h1>
+        <form id="contentForm">
+            <!-- Блок 1: Роль -->
+            <div class="form-group">
+                <div class="label-wrapper">
+                    <label for="role">РОЛЬ (Кто пишет)</label>
+                    <button type="button" class="placeholder-btn">Использовать пример</button>
+                </div>
+                <textarea id="role" name="role" rows="2" placeholder="Ты — опытный SEO-копирайтер, специализирующийся на маркетплейсах Ozon и Wildberries. Твоя задача — создавать продающие тексты, которые нравятся и людям, и алгоритмам."></textarea>
+            </div>
+
+            <!-- Блок 2: Контекст -->
+            <div class="form-group">
+                <div class="label-wrapper">
+                    <label for="context">КОНТЕКСТ (Товар, ЦА и площадка)</label>
+                    <button type="button" class="placeholder-btn">Использовать пример</button>
+                </div>
+                <textarea id="context" name="context" rows="4" placeholder="Товар: Робот-пылесос 'CleanBot X5 Pro'.
+Бренд: LazerTech.
+Ключевые фишки: лидар, влажная уборка, станция самоочистки, тихий (45 дБ).
+ЦА: Семьи с детьми и/или животными, 28-45 лет, ценят технологии и свободное время.
+Площадка: Ozon."></textarea>
+            </div>
+            
+            <!-- Блок 3: Семантическое ядро -->
+            <div class="form-group">
+                 <div class="label-wrapper">
+                    <label for="keywords">СЕМАНТИЧЕСКОЕ ЯДРО (Ключевые слова)</label>
+                    <button type="button" class="placeholder-btn">Использовать пример</button>
+                </div>
+                <textarea id="keywords" name="keywords" rows="5" placeholder="Сюда вставь ключи из Wordstat или сервисов аналитики.
+
+ВЧ-запросы (для заголовка):
+- робот-пылесос
+- пылесос с влажной уборкой
+
+СЧ/НЧ-запросы (для описания):
+- робот пылесос для квартиры с животными
+- купить моющий робот пылесос недорого
+- умный пылесос с лидаром
+
+LSI-слова (дополнительные):
+- чистота, уборка, шерсть, аллергены, умный дом, гаджет"></textarea>
+            </div>
+            
+            <!-- Блок 4: Задача -->
+            <div class="form-group">
+                <div class="label-wrapper">
+                    <label for="task">ЗАДАЧА (Что нужно сделать)</label>
+                    <button type="button" class="placeholder-btn">Использовать пример</button>
+                </div>
+                <textarea id="task" name="task" rows="3" placeholder="Создай полный комплект текстов для карточки:
+1. Продающий заголовок (по формуле).
+2. SEO-описание (5-7 буллитов с преимуществами).
+3. Заполнение блока 'Характеристики'."></textarea>
+            </div>
+            
+            <!-- Блок 5: Формат -->
+            <div class="form-group">
+                <div class="label-wrapper">
+                    <label for="format">ФОРМАТ ВЫДАЧИ (Как оформить ответ)</label>
+                    <button type="button" class="placeholder-btn">Использовать пример</button>
+                </div>
+                <textarea id="format" name="format" rows="4" placeholder="Представь ответ в виде четких блоков:
+
+### ЗАГОЛОВОК
+[Текст заголовка]
+
+### ОПИСАНИЕ
+[Текст описания]
+
+### ХАРАКТЕРИСТИКИ
+[Список 'Свойство: Значение']
+
+### ИДЕИ ДЛЯ ИНФОГРАФИКИ
+[Список из 5 идей для слайдов]"></textarea>
+            </div>
+            
+            <!-- Блок 6: Ограничения -->
+            <div class="form-group">
+                <div class="label-wrapper">
+                    <label for="constraints">ОГРАНИЧЕНИЯ (Правила игры)</label>
+                    <button type="button" class="placeholder-btn">Использовать пример</button>
+                </div>
+                <textarea id="constraints" name="constraints" rows="2" placeholder="Объем описания до 2500 символов. Тон — дружелюбный и заботливый. Запрещено использовать слова 'лучший', 'топ', 'гарантия'. Не копировать текст конкурентов."></textarea>
+            </div>
+
+            <!-- Блок 7: Примеры -->
+            <div class="form-group">
+                <div class="label-wrapper">
+                    <label for="examples">ПРИМЕРЫ (На что ориентироваться)</label>
+                    <button type="button" class="placeholder-btn">Использовать пример</button>
+                </div>
+                <textarea id="examples" name="examples" rows="3" placeholder="УДАЧНЫЙ ПРИМЕР: Артикул WB 12345678. Нравится, как они через инфографику показали мощность всасывания.
+НЕУДАЧНЫЙ ПРИМЕР: Артикул Ozon 87654321. Сухое, безэмоциональное описание."></textarea>
+            </div>
+
+            <button type="button" id="copyButton" class="main-action-btn">Сгенерировать и скопировать промпт</button>
+        </form>
+    </div>
+
+    <script>
+        // Функция для заполнения textarea из плейсхолдера
+        document.querySelectorAll('.placeholder-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                // Находим родительский .form-group
+                const formGroup = this.closest('.form-group');
+                if (formGroup) {
+                    // Внутри .form-group находим соответствующий textarea
+                    const textarea = formGroup.querySelector('textarea');
+                    if (textarea) {
+                        // Копируем placeholder в value
+                        textarea.value = textarea.placeholder;
+                        // Устанавливаем фокус на textarea для удобства редактирования
+                        textarea.focus();
+                    }
+                }
+            });
+        });
+
+        // Основная функция для копирования итогового промпта
+        document.getElementById("copyButton").addEventListener('click', function() {
+            const formElements = document.getElementById("contentForm").elements;
+            
+            let promptText = `**РОЛЬ:**\n${formElements.role.value}\n\n`;
+            promptText += `**КОНТЕКСТ (ТОВАР И ЦА):**\n${formElements.context.value}\n\n`;
+            promptText += `**СЕМАНТИЧЕСКОЕ ЯДРО (КЛЮЧЕВЫЕ СЛОВА):**\n${formElements.keywords.value}\n\n`;
+            promptText += `**ЗАДАЧА:**\n${formElements.task.value}\n\n`;
+            promptText += `**ФОРМАТ ВЫДАЧИ:**\n${formElements.format.value}\n\n`;
+            promptText += `**ОГРАНИЧЕНИЯ:**\n${formElements.constraints.value}\n\n`;
+            promptText += `**ПРИМЕРЫ:**\n${formElements.examples.value}`;
+
+            navigator.clipboard.writeText(promptText.trim()).then(function() {
+                alert('Готовый промпт скопирован в буфер обмена!');
+            }, function(err) {
+                console.error('Ошибка копирования: ', err);
+                alert('Не удалось скопировать текст. Возможно, ваш браузер не поддерживает эту функцию.');
+            });
+        });
+    </script>
+</body>
+</html>
