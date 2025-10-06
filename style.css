@@ -71,6 +71,36 @@ body {
     color: var(--link-hover-color);
     text-decoration: underline;
 }
+/* --- Archive Page Styling --- */
+.archive-container {
+    justify-content: flex-start; /* Align content to the top */
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+}
+
+.archive-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    font-style: normal;
+    margin-bottom: 3rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--link-color);
+}
+
+.archive-list {
+    width: 100%;
+    max-width: 680px;
+}
+
+.archived-question {
+    font-size: 1.3rem;
+    font-style: italic;
+    margin-bottom: 2rem;
+    padding-left: 1rem;
+    border-left: 2px solid #eee;
+    line-height: 1.6;
+}
 
 /* --- Responsive Design --- */
 @media (max-width: 600px) {
